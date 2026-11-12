@@ -46,3 +46,5 @@ The terminal should show `[INDIA NCO/NSDC]` messages when the catalogue synchron
 
 ## Preferred career field filtering
 The profile form includes a Preferred career field selector. Selecting a field filters recommendations to matching Indian occupation categories; selecting All Career Fields searches all active careers. All imported occupations remain in the database. The category mapping is based on the occupation category assigned during catalogue import, so some broad or uncategorised NCO entries may not appear under a narrow field until their category mapping is improved.
+# Career_Navigator_India
+India-focused Career Navigation and Job Recommendation System
