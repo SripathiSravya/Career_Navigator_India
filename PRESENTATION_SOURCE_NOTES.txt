@@ -1,0 +1,26 @@
+CAREER NAVIGATOR — INDIA-FOCUSED CAREER DATABASE NOTES
+
+Primary occupation source:
+Directorate General of Employment (DGE), Government of India — National Classification of Occupations (NCO) 2015.
+Official searchable occupation catalogue: https://www.dge.gov.in/nat
+Official NCO page and PDF volumes: https://www.dge.gov.in/nco-2015
+
+Supplementary reference:
+National Skill Development Corporation (NSDC) — National Occupational Standards and Model Curriculum:
+https://www.nsdcindia.org/national-occupational-standards-and-model-curriculum
+
+How it works:
+- The app reads the paginated official DGE occupation listing.
+- It imports occupation titles, NCO codes, and classification groups into SQLite.
+- Duplicate career titles are ignored.
+- Starter skill mappings are assigned from occupation-family categories and should be reviewed before treating them as authoritative skill requirements.
+- Recommendation logic iterates through all active careers stored in the database, not a fixed 25-career list.
+- A successful source check is cached for 24 hours; failed requests are retried approximately every 15 minutes while the app process is running.
+
+Accuracy statement for presentation:
+NCO 2015 is a broad Indian occupation classification described by the Government of India as covering approximately 3,600 civilian occupations across 52 sectors. It is not a live vacancy feed and does not guarantee immediate discovery of every newly coined career. NSDC QP/NOS catalogues provide additional industry-defined job-role and skill references; the current importer checks the official NSDC catalogue page but does not claim to parse every linked qualification pack.
+
+No ESCO or foreign job-board feed is used as the primary career database. No source can guarantee a complete, real-time list of every career in India.
+
+Hosting limitation:
+The scheduler runs inside the Flask application process. Free hosting services that sleep or restart cannot guarantee an exact 24-hour check. Use an always-on service or external scheduler for guaranteed execution.
